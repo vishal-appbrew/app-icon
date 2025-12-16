@@ -1,0 +1,89 @@
+INFO:     Will watch for changes in these directories: ['/Users/vishal/Documents/Appbrew Tech/logo-generator/app-icon-generator']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [19152] using StatReload
+INFO:     Started server process [19167]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:59450 - "GET / HTTP/1.1" 200 OK
+INFO:app-icon-generator:Generating icon for: https://www.nike.com/in/
+INFO:httpx:HTTP Request: GET https://www.nike.com/in/ "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Fetched HTML from https://www.nike.com/in/ (669946 bytes)
+INFO:app-icon-generator:Extracted 8 candidates for https://www.nike.com/in/
+INFO:app-icon-generator:Trying candidate: https://www.nike.com/android-icon-192x192.png (score: 392)
+INFO:httpx:HTTP Request: GET https://www.nike.com/android-icon-192x192.png "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Successfully composed icon from https://www.nike.com/android-icon-192x192.png
+INFO:     127.0.0.1:59467 - "POST /generate_icon HTTP/1.1" 200 OK
+INFO:app-icon-generator:Generating icon for: https://ta3swim.com/
+INFO:httpx:HTTP Request: GET https://ta3swim.com/ "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Fetched HTML from https://ta3swim.com/ (1272359 bytes)
+INFO:app-icon-generator:Extracted 4 candidates for https://ta3swim.com/
+INFO:app-icon-generator:Trying candidate: https://ta3swim.com/cdn/shop/files/DREW.jpg?v=1725644881&width=250 (score: 250)
+INFO:httpx:HTTP Request: GET https://ta3swim.com/cdn/shop/files/DREW.jpg?v=1725644881&width=250 "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Successfully composed icon from https://ta3swim.com/cdn/shop/files/DREW.jpg?v=1725644881&width=250
+INFO:     127.0.0.1:59760 - "POST /generate_icon HTTP/1.1" 200 OK
+INFO:app-icon-generator:Generating icon for: https://foreverbeaumore.com/
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/ "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Fetched HTML from https://foreverbeaumore.com/ (947702 bytes)
+INFO:app-icon-generator:Extracted 4 candidates for https://foreverbeaumore.com/
+INFO:app-icon-generator:Trying candidate: https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 (score: 88)
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Candidate https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 is SVG, skipping (will use Clearbit fallback if needed)
+INFO:app-icon-generator:Trying candidate: https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32 (score: 0)
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32 "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Successfully composed icon from https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32
+INFO:     127.0.0.1:60072 - "POST /generate_icon HTTP/1.1" 200 OK
+INFO:app-icon-generator:Generating icon for: https://foreverbeaumore.com/
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/ "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Fetched HTML from https://foreverbeaumore.com/ (947702 bytes)
+INFO:app-icon-generator:Extracted 4 candidates for https://foreverbeaumore.com/
+INFO:app-icon-generator:Trying candidate: https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 (score: 88)
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Candidate https://foreverbeaumore.com/cdn/shop/files/quiz_logo.svg?v=1732356010&width=93 is SVG, skipping (will use Clearbit fallback if needed)
+INFO:app-icon-generator:Trying candidate: https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32 (score: 0)
+INFO:httpx:HTTP Request: GET https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32 "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Successfully composed icon from https://foreverbeaumore.com/cdn/shop/files/forever-beaumore-favicon.jpg?crop=center&height=32&v=1636354268&width=32
+INFO:     127.0.0.1:60221 - "POST /generate_icon HTTP/1.1" 200 OK
+INFO:app-icon-generator:Generating icon for: https://www.nike.com/in/
+INFO:httpx:HTTP Request: GET https://www.nike.com/in/ "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Fetched HTML from https://www.nike.com/in/ (669946 bytes)
+INFO:app-icon-generator:Extracted 8 candidates for https://www.nike.com/in/
+INFO:app-icon-generator:Trying candidate: https://www.nike.com/android-icon-192x192.png (score: 392)
+INFO:httpx:HTTP Request: GET https://www.nike.com/android-icon-192x192.png "HTTP/1.1 200 OK"
+INFO:app-icon-generator:Successfully composed icon from https://www.nike.com/android-icon-192x192.png
+INFO:     127.0.0.1:60544 - "POST /generate_icon HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19167]
+INFO:     Started server process [19707]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19707]
+INFO:     Started server process [19716]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:60968 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61136 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61136 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19716]
+INFO:     Started server process [19835]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19835]
+INFO:     Started server process [19920]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
