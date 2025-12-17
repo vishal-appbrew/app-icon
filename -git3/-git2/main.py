@@ -625,29 +625,8 @@ async def get_logo_image_from_website(url: str) -> Optional[Image.Image]:
                     return icon_img
                 except Exception as e:
                     logger.warning(f"Error processing Clearbit image for {domain}: {e}")
-                    # Fall through to Google
-
-    # 5. Fallback: Google Favicon service
-    try:
-        domain = urlparse(url).netloc
-        if domain:
-             # Remove www. if present? Google might handle it either way.
-             # Simply passing domain is safer.
-            google_url = f"https://www.google.com/s2/favicons?domain={domain}&sz=128"
-            logger.info(f"Using Google Favicon fallback: {google_url}")
-            
-            # Use fetch_image but we know it's a favicon
-            g_data, g_ctype = await fetch_image(google_url)
-            if g_data:
-                # Open and process
-                pil_im = Image.open(io.BytesIO(g_data)).convert("RGBA")
-                trimmed = trim_whitespace(pil_im, tolerance=10)
-                icon_img = compose_icon(trimmed)
-                logger.info("Successfully composed icon from Google Favicon")
-                return icon_img
-    except Exception as e:
-        logger.warning(f"Google Favicon fallback failed: {e}")
-
+                    return None
+    
     return None
 
 

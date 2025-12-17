@@ -313,18 +313,9 @@ def score_candidates(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     def logo_score(url: str, label: str) -> int:
         score = 0
-        url_lower = (url or "").lower()
-        label_lower = label.lower()
-        
-        # Massive boost for explicit 'logo' in filename or label
-        if "logo" in url_lower: score += 2000
-        if "logo" in label_lower: score += 2000
-        
-        # Penalize banners/slides
-        if "banner" in url_lower or "banner" in label_lower: score -= 2000
-        if "slide" in url_lower or "slide" in label_lower: score -= 2000
-        
-        if "header" in label: score += 500 # Boost header items
+        if "logo" in (url or "").lower(): score += 1
+        if "logo" in label.lower(): score += 50 # Strong boost if we detected 'logo' in attributes
+        if "header" in label: score += 500 # Massive boost for header items
         return score
 
     def size_score(width: Optional[int], height: Optional[int]) -> int:
@@ -625,29 +616,8 @@ async def get_logo_image_from_website(url: str) -> Optional[Image.Image]:
                     return icon_img
                 except Exception as e:
                     logger.warning(f"Error processing Clearbit image for {domain}: {e}")
-                    # Fall through to Google
-
-    # 5. Fallback: Google Favicon service
-    try:
-        domain = urlparse(url).netloc
-        if domain:
-             # Remove www. if present? Google might handle it either way.
-             # Simply passing domain is safer.
-            google_url = f"https://www.google.com/s2/favicons?domain={domain}&sz=128"
-            logger.info(f"Using Google Favicon fallback: {google_url}")
-            
-            # Use fetch_image but we know it's a favicon
-            g_data, g_ctype = await fetch_image(google_url)
-            if g_data:
-                # Open and process
-                pil_im = Image.open(io.BytesIO(g_data)).convert("RGBA")
-                trimmed = trim_whitespace(pil_im, tolerance=10)
-                icon_img = compose_icon(trimmed)
-                logger.info("Successfully composed icon from Google Favicon")
-                return icon_img
-    except Exception as e:
-        logger.warning(f"Google Favicon fallback failed: {e}")
-
+                    return None
+    
     return None
 
 
