@@ -535,16 +535,15 @@ async def get_logo_image_from_website(url: str) -> Optional[Image.Image]:
     """
     # 1. Fetch HTML
     html = await fetch_html(url)
-    if not html:
-        logger.warning(f"Could not fetch HTML from {url}")
-        return None
+    candidates = []
+    if html:
+        # 2. Extract all image/logo candidates
+        candidates = extract_candidates(html, url)
+        candidates = score_candidates(candidates)
+        logger.info(f"Extracted {len(candidates)} candidates for {url}")
+    else:
+        logger.warning(f"Could not fetch HTML from {url}, skipping extraction")
 
-    # 2. Extract all image/logo candidates
-    candidates = extract_candidates(html, url)
-    candidates = score_candidates(candidates)
-    logger.info(f"Extracted {len(candidates)} candidates for {url}")
-
-    # 3. Try to download best raster (non-SVG) candidates one by one
     # 3. Try to download best candidates one by one
     for cand in candidates:
         logger.info(f"Trying candidate: {cand.get('url', 'inline-svg')} (score: {cand.get('score', 0)})")
